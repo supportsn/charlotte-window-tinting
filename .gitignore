@@ -1,0 +1,13 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Logs / scratch
+*.log
+_sheet.*
+_xlsx/
+_docs_html/

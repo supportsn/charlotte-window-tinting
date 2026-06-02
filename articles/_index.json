@@ -1,0 +1,233 @@
+{
+  "source_sheet": "https://docs.google.com/spreadsheets/d/1dnBfbsu6b9OUV1eJWe_1pRob1Ng2hMtlpbK9QnJDx2c/edit",
+  "tab": "NEW BLOGS - Phase 2",
+  "rows": "12-30",
+  "sop_column": "SOP Onsite SEO V2 (col V)",
+  "site_id": "charlottewindowtinting",
+  "articles": [
+    {
+      "row": "pilot",
+      "topic": "how long does vinyl wrap last",
+      "slug": "how-long-does-vinyl-wrap-last",
+      "target_url": "https://charlottewindowtinting.com/how-long-does-vinyl-wrap-last/",
+      "doc": "https://docs.google.com/document/d/19OdBJu5uAhjZbm6bnm48ZHass5EpBI056bRyD4Yxueg/edit",
+      "source": "articles/source/how-long-does-vinyl-wrap-last.json",
+      "elementor": "articles/elementor/how-long-does-vinyl-wrap-last.json",
+      "post_id": 7973,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=7973&action=elementor",
+      "note": "Phase-1 pilot, built ad-hoc; live layout/CTA may differ slightly from the regenerated elementor file."
+    },
+    {
+      "row": 12,
+      "topic": "where can i get my windows tinted near me",
+      "slug": "where-can-i-get-my-windows-tinted-near-me",
+      "target_url": "https://charlottewindowtinting.com/where-can-i-get-my-windows-tinted-near-me/",
+      "doc": "https://docs.google.com/document/d/1ms3awvfJnZEsauzryiTlgUzoPjzDtjlQFYx-75saYYw/edit",
+      "post_id": 7982,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=7982&action=elementor",
+      "source": "articles/source/where-can-i-get-my-windows-tinted-near-me.json",
+      "elementor": "articles/elementor/where-can-i-get-my-windows-tinted-near-me.json"
+    },
+    {
+      "row": 13,
+      "topic": "how long does it take to tint windows",
+      "slug": "how-long-does-it-take-to-tint-windows",
+      "target_url": "https://charlottewindowtinting.com/how-long-does-it-take-to-tint-windows/",
+      "doc": "https://docs.google.com/document/d/1eQCGQILK-eVRgnr9SiJxGLy3p3YkWJ9GX78XuIleI1w/edit",
+      "post_id": 7986,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=7986&action=elementor",
+      "source": "articles/source/how-long-does-it-take-to-tint-windows.json",
+      "elementor": "articles/elementor/how-long-does-it-take-to-tint-windows.json"
+    },
+    {
+      "row": 14,
+      "topic": "legal tint in nc",
+      "slug": "legal-tint-in-nc",
+      "target_url": "https://charlottewindowtinting.com/legal-tint-in-nc/",
+      "doc": "https://docs.google.com/document/d/1iLG4oIX-7yIr4eBc5xbNkSW2zoWHAiOk1PVa5lN4AcA/edit",
+      "post_id": 7999,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=7999&action=elementor",
+      "source": "articles/source/legal-tint-in-nc.json",
+      "elementor": "articles/elementor/legal-tint-in-nc.json"
+    },
+    {
+      "row": 15,
+      "topic": "do tinted windows help with heat",
+      "slug": "do-tinted-windows-help-with-heat",
+      "target_url": "https://charlottewindowtinting.com/do-tinted-windows-help-with-heat/",
+      "doc": "https://docs.google.com/document/d/1rYhGWXExDn3HiaLF6zxGa_joMjgVNv9ULsVLMBRC13U/edit",
+      "post_id": 8018,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=8018&action=elementor",
+      "source": "articles/source/do-tinted-windows-help-with-heat.json",
+      "elementor": "articles/elementor/do-tinted-windows-help-with-heat.json"
+    },
+    {
+      "row": 16,
+      "topic": "solar shades for windows",
+      "slug": "solar-shades-for-windows",
+      "target_url": "https://charlottewindowtinting.com/solar-shades-for-windows/",
+      "doc": "https://docs.google.com/document/d/1Jz4BVqev4Py_UD4KmmUXcJFUQ2LqWzaTfFPvbjMxUHk/edit",
+      "post_id": 7987,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=7987&action=elementor",
+      "source": "articles/source/solar-shades-for-windows.json",
+      "elementor": "articles/elementor/solar-shades-for-windows.json"
+    },
+    {
+      "row": 17,
+      "topic": "how to measure for blinds",
+      "slug": "how-to-measure-for-blinds",
+      "target_url": "https://charlottewindowtinting.com/how-to-measure-for-blinds/",
+      "doc": "https://docs.google.com/document/d/1QfZ9G43cF-B0EiR_DihMIkan3-eRGJ17Gx3UKMxqWGs/edit",
+      "post_id": 8008,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=8008&action=elementor",
+      "source": "articles/source/how-to-measure-for-blinds.json",
+      "elementor": "articles/elementor/how-to-measure-for-blinds.json"
+    },
+    {
+      "row": 18,
+      "topic": "solar shades vs roller shades",
+      "slug": "solar-shades-vs-roller-shades",
+      "target_url": "https://charlottewindowtinting.com/solar-shades-vs-roller-shades/",
+      "doc": "https://docs.google.com/document/d/1Bv_Me6inwnBKwE3zpwOduMchgRy9JVmjVrO5W8S_SWA/edit",
+      "post_id": 8025,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=8025&action=elementor",
+      "source": "articles/source/solar-shades-vs-roller-shades.json",
+      "elementor": "articles/elementor/solar-shades-vs-roller-shades.json"
+    },
+    {
+      "row": 19,
+      "topic": "what is paint protection film",
+      "slug": "what-is-paint-protection-film",
+      "target_url": "https://charlottewindowtinting.com/what-is-paint-protection-film/",
+      "doc": "https://docs.google.com/document/d/1nTPdo2uKTKO-iDc7LRv3ZYIhzFXy0267ipg2T-QKsNk/edit",
+      "post_id": 7988,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=7988&action=elementor",
+      "source": "articles/source/what-is-paint-protection-film.json",
+      "elementor": "articles/elementor/what-is-paint-protection-film.json"
+    },
+    {
+      "row": 20,
+      "topic": "how much does ppf cost",
+      "slug": "how-much-does-ppf-cost",
+      "target_url": "https://charlottewindowtinting.com/how-much-does-ppf-cost/",
+      "doc": "https://docs.google.com/document/d/1XfAUT5-MR6spf2MwHX-g8Gjwz88xMWOrzc3A8aZcNyY/edit",
+      "post_id": 8002,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=8002&action=elementor",
+      "source": "articles/source/how-much-does-ppf-cost.json",
+      "elementor": "articles/elementor/how-much-does-ppf-cost.json"
+    },
+    {
+      "row": 21,
+      "topic": "does paint protection film protect the sun",
+      "slug": "does-paint-protection-film-protect-the-sun",
+      "target_url": "https://charlottewindowtinting.com/does-paint-protection-film-protect-the-sun/",
+      "doc": "https://docs.google.com/document/d/1H1-Mtt9m-Ve9h5YMfJZHqOkYJmfxEPKVT8g-nVBx46A/edit",
+      "post_id": 8015,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=8015&action=elementor",
+      "source": "articles/source/does-paint-protection-film-protect-the-sun.json",
+      "elementor": "articles/elementor/does-paint-protection-film-protect-the-sun.json"
+    },
+    {
+      "row": 22,
+      "topic": "how to install paint protection film",
+      "slug": "how-to-install-paint-protection-film",
+      "target_url": "https://charlottewindowtinting.com/how-to-install-paint-protection-film/",
+      "doc": "https://docs.google.com/document/d/1dhPeW0j-Usjw68AbJpulPfM9WthFUTGcsu-Q7ipEpYc/edit",
+      "post_id": 7989,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=7989&action=elementor",
+      "source": "articles/source/how-to-install-paint-protection-film.json",
+      "elementor": "articles/elementor/how-to-install-paint-protection-film.json"
+    },
+    {
+      "row": 23,
+      "topic": "can you clay bar paint protection film",
+      "slug": "can-you-clay-bar-paint-protection-film",
+      "target_url": "https://charlottewindowtinting.com/can-you-clay-bar-paint-protection-film/",
+      "doc": "https://docs.google.com/document/d/1Cfxrpz02gngB3RHHg4P9Jwbm3SDf5JLAa_BnE2phyww/edit",
+      "post_id": 8009,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=8009&action=elementor",
+      "source": "articles/source/can-you-clay-bar-paint-protection-film.json",
+      "elementor": "articles/elementor/can-you-clay-bar-paint-protection-film.json"
+    },
+    {
+      "row": 24,
+      "topic": "what is ceramic coating",
+      "slug": "what-is-ceramic-coating",
+      "target_url": "https://charlottewindowtinting.com/what-is-ceramic-coating/",
+      "doc": "https://docs.google.com/document/d/1V3eVYqN_9O0tFl0oT1jnRbXN46GFLmQSgVrP2hkpFuA/edit",
+      "post_id": 8027,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=8027&action=elementor",
+      "source": "articles/source/what-is-ceramic-coating.json",
+      "elementor": "articles/elementor/what-is-ceramic-coating.json"
+    },
+    {
+      "row": 25,
+      "topic": "how long does ceramic coating take to cure",
+      "slug": "how-long-does-ceramic-coating-take-to-cure",
+      "target_url": "https://charlottewindowtinting.com/how-long-does-ceramic-coating-take-to-cure/",
+      "doc": "https://docs.google.com/document/d/1iIq4mmaRtGM6_Jn5v7u6v4Y_ouigJXALpsbkCLvP2-o/edit",
+      "post_id": 7990,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=7990&action=elementor",
+      "source": "articles/source/how-long-does-ceramic-coating-take-to-cure.json",
+      "elementor": "articles/elementor/how-long-does-ceramic-coating-take-to-cure.json"
+    },
+    {
+      "row": 26,
+      "topic": "how to apply ceramic coating",
+      "slug": "how-to-apply-ceramic-coating",
+      "target_url": "https://charlottewindowtinting.com/how-to-apply-ceramic-coating/",
+      "doc": "https://docs.google.com/document/d/1inTznkKwG9lMeHOVuU94S1VuBFA45ujsOR2Ukp7KwNA/edit",
+      "post_id": 8003,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=8003&action=elementor",
+      "source": "articles/source/how-to-apply-ceramic-coating.json",
+      "elementor": "articles/elementor/how-to-apply-ceramic-coating.json"
+    },
+    {
+      "row": 27,
+      "topic": "how long does ceramic coating last",
+      "slug": "how-long-does-ceramic-coating-last",
+      "target_url": "https://charlottewindowtinting.com/how-long-does-ceramic-coating-last/",
+      "doc": "https://docs.google.com/document/d/1qHoNiT2uaKKlFpzNZvpUt9HeW-eE38OVJf9Bm58E6Qs/edit",
+      "post_id": 8026,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=8026&action=elementor",
+      "source": "articles/source/how-long-does-ceramic-coating-last.json",
+      "elementor": "articles/elementor/how-long-does-ceramic-coating-last.json"
+    },
+    {
+      "row": 28,
+      "topic": "how much does ceramic coating cost",
+      "slug": "how-much-does-ceramic-coating-cost",
+      "target_url": "https://charlottewindowtinting.com/how-much-does-ceramic-coating-cost/",
+      "doc": "https://docs.google.com/document/d/1pbw1i9isLnW2CGk1cSOeOsWIGTLHBo2-XMtYQ4YpxDo/edit",
+      "post_id": 7991,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=7991&action=elementor",
+      "source": "articles/source/how-much-does-ceramic-coating-cost.json",
+      "elementor": "articles/elementor/how-much-does-ceramic-coating-cost.json"
+    },
+    {
+      "row": 29,
+      "topic": "how much vinyl to wrap a car",
+      "slug": "how-much-vinyl-to-wrap-a-car",
+      "target_url": "https://charlottewindowtinting.com/how-much-vinyl-to-wrap-a-car/",
+      "doc": "https://docs.google.com/document/d/1Xt9yYLsEzNUXVmWSQTE8dE7mvXV5KI8ipWhqmjDHIMI/edit",
+      "post_id": 8001,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=8001&action=elementor",
+      "source": "articles/source/how-much-vinyl-to-wrap-a-car.json",
+      "elementor": "articles/elementor/how-much-vinyl-to-wrap-a-car.json"
+    },
+    {
+      "row": 30,
+      "topic": "how to vinyl wrap a car",
+      "slug": "how-to-vinyl-wrap-a-car",
+      "target_url": "https://charlottewindowtinting.com/how-to-vinyl-wrap-a-car/",
+      "doc": "https://docs.google.com/document/d/1i2TlvGYamtv6dS1GiMlxLFp8L1RY2nb73MkTwGH8Lfc/edit",
+      "post_id": 8017,
+      "edit_url": "https://charlottewindowtinting.com/wp-admin/post.php?post=8017&action=elementor",
+      "source": "articles/source/how-to-vinyl-wrap-a-car.json",
+      "elementor": "articles/elementor/how-to-vinyl-wrap-a-car.json"
+    }
+  ],
+  "built_at": "2026-06-02",
+  "status": "all drafts; template=template-elementor.php; publish manually",
+  "total_articles": 20
+}
