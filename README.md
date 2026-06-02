@@ -10,16 +10,20 @@ content pipeline, site/MCP facts, block schema, build status, and remaining step
 ## Quick reference
 
 ```
-articles/source/      # article content (block JSON) extracted from Google Docs
+articles/source/      # article content (block JSON) extracted from Google Docs — CANONICAL
 articles/elementor/   # generated Elementor template_json (ready to import)
+articles/readable/    # generated human-readable Markdown view (do not hand-edit)
 articles/_index.json  # slug -> post_id -> edit_url for every built post
 scripts/build-elementor.js   # source -> elementor (deterministic)
+scripts/build-markdown.js    # source -> readable Markdown
 ```
 
-Regenerate the Elementor JSON after editing any `source/` file:
+`articles/source/*.json` is the single source of truth. After editing any
+`source/` file, regenerate both outputs:
 
 ```bash
-node scripts/build-elementor.js
+node scripts/build-elementor.js   # rebuild the Elementor import JSON
+node scripts/build-markdown.js    # rebuild the readable Markdown
 ```
 
 All 20 posts are currently **drafts** on the site — publish manually from the

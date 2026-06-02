@@ -15,13 +15,16 @@ Pipeline + content for publishing SEO blog posts to **charlottewindowtinting.com
 charlottewindowtinting/
 ├── CLAUDE.md                     # this handoff doc
 ├── scripts/
-│   └── build-elementor.js        # source JSON  ->  Elementor template_json (deterministic)
+│   ├── build-elementor.js        # source JSON  ->  Elementor template_json (deterministic)
+│   └── build-markdown.js         # source JSON  ->  readable Markdown (one-way, for review)
 └── articles/
     ├── _index.json               # master list: slug, doc, target_url, post_id, edit_url, file paths
-    ├── source/                    # article content extracted from Google Docs (block schema)
+    ├── source/                    # article content extracted from Google Docs (block schema) — CANONICAL
     │   └── <slug>.json   (20)
-    └── elementor/                 # generated Elementor template_json, ready to import (20)
-        └── <slug>.json   (20)
+    ├── elementor/                 # generated Elementor template_json, ready to import (20)
+    │   └── <slug>.json   (20)
+    └── readable/                  # generated human-readable Markdown view (20) — do not hand-edit
+        └── <slug>.md    (20)
 ```
 
 - `source/<slug>.json` — the article as ordered **blocks** (see §4). Hand/agent-extracted
