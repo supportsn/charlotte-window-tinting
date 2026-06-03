@@ -48,13 +48,43 @@ function list(items, ordered) {
   const li = (items || []).map((it) => `<li>${SPAN(it)}</li>`).join('');
   return textEditor(`<${tag}>${li}</${tag}>`);
 }
+// Self-contained .wt-table styling (colored header, zebra rows) — embedded per table,
+// exactly as the reference posts do (the class is NOT defined in a global theme stylesheet).
+const WT_TABLE_STYLE =
+  '<style>.wt-wrap{font-family:\'Segoe UI\',Arial,sans-serif;width:100%;overflow-x:auto;display:flex;justify-content:center;}' +
+  '.wt-table{width:100%;border-collapse:collapse;table-layout:fixed;}' +
+  '.wt-table thead tr th{background-color:#1b3d5c;color:#ffffff;font-size:16px;font-weight:700;padding:18px 20px;text-align:center;border:none;}' +
+  '.wt-table thead tr th:first-child{width:22%;}' +
+  '.wt-table tbody tr td{padding:18px 20px;border-bottom:1px solid #dde3ea;font-size:15px;font-weight:400;color:#1a2a3a;vertical-align:middle;background-color:#ffffff;text-align:center;line-height:1.5;}' +
+  '.wt-table tbody tr:nth-child(odd) td{background-color:#f3f5f7;}' +
+  '.wt-table tbody tr:nth-child(even) td{background-color:#ffffff;}' +
+  '.wt-table tbody tr td:first-child{font-weight:700;}' +
+  '@media (max-width:640px){.wt-table{min-width:700px;}.wt-table thead tr th,.wt-table tbody tr td{padding:14px;font-size:14px;}}</style>';
+
 function table(headers, rows) {
-  const th = (headers || []).map((h) =>
-    `<th style="border:1px solid #ccc;padding:8px;text-align:left;">${esc(h)}</th>`).join('');
+  // Embed the wt-table <style> + .wt-wrap wrapper so the header color/zebra rows render — matches reference posts.
+  const th = (headers || []).map((h) => `<th>${esc(h)}</th>`).join('');
   const trs = (rows || []).map((r) =>
-    `<tr>${(r || []).map((c) => `<td style="border:1px solid #ccc;padding:8px;">${esc(c)}</td>`).join('')}</tr>`).join('');
-  const html = `<table style="width:100%;border-collapse:collapse;"><thead><tr>${th}</tr></thead><tbody>${trs}</tbody></table>`;
+    `<tr>${(r || []).map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('');
+  const html = `${WT_TABLE_STYLE}\n<div class="wt-wrap"><table class="wt-table" cellspacing="0" cellpadding="0"><thead><tr>${th}</tr></thead><tbody>${trs}</tbody></table></div>`;
   return textEditor(html, false);
+}
+
+// Key Takeaways box: one text-editor holding the heading + list, with a left accent border
+// (mirrors brand template widget 6dbccb9/accent — the "border trái" look).
+function keyTakeaways(headingText, listBlock) {
+  const tag = listBlock.tag === 'ol' ? 'ol' : 'ul';
+  const li = (listBlock.items || []).map((it) => `<li>${SPAN(it)}</li>`).join('');
+  const editor =
+    `<h2><span style="font-family: proxima-nova; font-size: 45px;">${esc(headingText)}</span></h2>\n<${tag}>${li}</${tag}>`;
+  return { id: id(), elType: 'widget', widgetType: 'text-editor', elements: [], settings: {
+    editor,
+    _padding: { unit: 'px', top: '15', right: '15', bottom: '15', left: '15', isLinked: false },
+    _border_border: 'solid',
+    _border_width: { unit: 'px', top: '0', right: '0', bottom: '0', left: '4', isLinked: false },
+    __globals__: { _border_color: 'globals/colors?id=accent' },
+    align: 'justify'
+  } };
 }
 function toc() {
   return { id: id(), elType: 'widget', widgetType: 'table-of-contents', elements: [], settings: {
@@ -153,7 +183,20 @@ const summary = [];
 for (const f of files) {
   counter = 0; // reset per file so ids are stable per article
   const art = JSON.parse(fs.readFileSync(path.join(SRC, f), 'utf8'));
-  const widgets = (art.blocks || []).map(blockToWidget);
+  const blocks = art.blocks || [];
+  const widgets = [];
+  for (let i = 0; i < blocks.length; i++) {
+    const b = blocks[i];
+    const next = blocks[i + 1];
+    // Merge "Key Takeaways" heading + its following list into one bordered box.
+    if (b.tag === 'h2' && /^key takeaways$/i.test((b.text || '').trim()) &&
+        next && (next.tag === 'ul' || next.tag === 'ol')) {
+      widgets.push(keyTakeaways(b.text, next));
+      i++; // skip the list block (consumed)
+      continue;
+    }
+    widgets.push(blockToWidget(b));
+  }
   const contentSection = section([column(widgets)], {
     padding_tablet: { unit: 'px', top: '32', right: '32', bottom: '32', left: '32', isLinked: true },
     padding_mobile: { unit: 'px', top: '8', right: '8', bottom: '8', left: '8', isLinked: true }
