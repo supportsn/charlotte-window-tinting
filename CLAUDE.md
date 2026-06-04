@@ -137,11 +137,16 @@ fallback (`the_content`) instead of Elementor — `_elementor_edit_mode` was not
 they showed NO Table-of-Contents widget, tables stripped of the `wt-table` class (no header
 color), and FAQ as plain h3/p instead of an accordion. Verified via live frontend
 (`data-elementor-type` absent) and cross-checked with `elementor-mcp-list-pages`.
-- **Fix that works:** `elementor-mcp-update-page-settings {settings:{template:"template-elementor.php"}}`
-  flips the post to Elementor render mode. Applied to all 13. (It is flaky/eventually-consistent and
-  server page-cache hides the change — verify by fetching the live URL with a cache-bust query, not `get_post`.)
-- **Gotcha:** `get_post` content_html and `list-pages` are cached/inconsistent — NOT reliable to verify
-  render mode. The reliable signal is the published front-end HTML (look for `data-elementor-type`).
+- **What actually sets builder mode (verified):** opening the post once in the **Elementor editor**
+  ("Edit with Elementor", then Update) sets `_elementor_edit_mode=builder`. **MCP cannot do this** —
+  `update-page-settings`/`update-element`/`import-template` do NOT reliably flip it (earlier apparent
+  "flips" were the user opening pages in Elementor). All 20 were fixed by opening each in Elementor. ✅ 20/20 builder.
+- **⚠️ Consequence:** an MCP **re-import reverts a post to fallback** (it doesn't set builder, and MCP can't
+  re-set it) → you'd have to re-open all 20 in Elementor again. So DO NOT use re-import to apply further
+  content tweaks. Apply remaining fixes **in place** (`update-element`/`update-widget`/`add-widget`), which
+  preserve builder mode.
+- **Verify render mode** only via the published front-end HTML with a cache-bust query (`?ver=<rand>`),
+  looking for `data-elementor-type`. `get_post` content_html and `list-pages` are cached/inconsistent — unreliable.
 
 **Generator fixes prepared (committed, NOT yet re-imported to live):**
 - Key Takeaways is now a normal H2 heading widget (consistent size) + bordered list (was an oversized 55px h2).
@@ -152,8 +157,9 @@ color), and FAQ as plain h3/p instead of an accordion. Verified via live fronten
   extraction flattened them to plain text (live pages have 0 `<strong>`/`<em>` in content). Needs re-extracting
   the 20 docs preserving emphasis + a generator change to allow inline `<strong>/<em>` (block text is currently
   HTML-escaped). Big task.
-- [ ] **Apply KT/CTA/bold to live**: requires a re-import pass of all 20 (remove old sections → import → then
-  re-run update-page-settings to re-set builder, since re-import can drop builder mode).
+- [ ] **Apply KT/CTA/bold to live**: must be done **in place** (`update-element`/`update-widget`/`add-widget`),
+  NOT via re-import (re-import drops builder mode and MCP can't re-set it — see above). The KT/CTA generator
+  fixes are committed but only affect a fresh build; applying them to the existing 20 live posts needs in-place edits.
 - [ ] **Title Case headings**: global typography *Secondary* + the kit h2/h3 tags are `text-transform:uppercase`,
   so ALL headings render UPPERCASE site-wide. Making blog headings Title Case is a global/per-heading override
   decision (affects the whole site) — needs the client's call.
