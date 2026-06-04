@@ -127,6 +127,37 @@ ad-hoc; its live layout/CTA may differ slightly from its regenerated `elementor/
 
 ---
 
+## 5b. UAT round (June 2026) — status
+
+QA doc: ClickUp "UAT Test - 20 blogs - June. 26" (mirrored in `uat/uat-20-blogs-june-2026.md`,
+evidence images were downloaded to `uat/evidence/` locally — gitignored).
+
+**Root cause of most QA issues (FIXED):** 13 of the 20 posts were rendering the WordPress
+fallback (`the_content`) instead of Elementor — `_elementor_edit_mode` was not `builder` — so
+they showed NO Table-of-Contents widget, tables stripped of the `wt-table` class (no header
+color), and FAQ as plain h3/p instead of an accordion. Verified via live frontend
+(`data-elementor-type` absent) and cross-checked with `elementor-mcp-list-pages`.
+- **Fix that works:** `elementor-mcp-update-page-settings {settings:{template:"template-elementor.php"}}`
+  flips the post to Elementor render mode. Applied to all 13. (It is flaky/eventually-consistent and
+  server page-cache hides the change — verify by fetching the live URL with a cache-bust query, not `get_post`.)
+- **Gotcha:** `get_post` content_html and `list-pages` are cached/inconsistent — NOT reliable to verify
+  render mode. The reliable signal is the published front-end HTML (look for `data-elementor-type`).
+
+**Generator fixes prepared (committed, NOT yet re-imported to live):**
+- Key Takeaways is now a normal H2 heading widget (consistent size) + bordered list (was an oversized 55px h2).
+- CTA "Get a Free Quote" heading is `h3` so the TOC widget no longer lists it.
+
+**Still pending:**
+- [ ] **Bold/italic**: the Google Docs bold key phrases ("Pro Tip:", "Important:", keywords) + some italic;
+  extraction flattened them to plain text (live pages have 0 `<strong>`/`<em>` in content). Needs re-extracting
+  the 20 docs preserving emphasis + a generator change to allow inline `<strong>/<em>` (block text is currently
+  HTML-escaped). Big task.
+- [ ] **Apply KT/CTA/bold to live**: requires a re-import pass of all 20 (remove old sections → import → then
+  re-run update-page-settings to re-set builder, since re-import can drop builder mode).
+- [ ] **Title Case headings**: global typography *Secondary* + the kit h2/h3 tags are `text-transform:uppercase`,
+  so ALL headings render UPPERCASE site-wide. Making blog headings Title Case is a global/per-heading override
+  decision (affects the whole site) — needs the client's call.
+
 ## 6. Extracting more articles from the sheet
 
 - The "SOP Onsite SEO V2" cells display "View" — the Google Doc URL is a **hyperlink**, absent
