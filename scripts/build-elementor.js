@@ -70,15 +70,14 @@ function table(headers, rows) {
   return textEditor(html, false);
 }
 
-// Key Takeaways box: one text-editor holding the heading + list, with a left accent border
-// (mirrors brand template widget 6dbccb9/accent — the "border trái" look).
-function keyTakeaways(headingText, listBlock) {
+// Key Takeaways list box: a text-editor holding ONLY the list, with a left accent border
+// ("border trái"). The "Key Takeaways" heading is emitted separately as a normal heading
+// widget (global secondary) so its size matches every other H2 (UAT: KT was oversized).
+function ktList(listBlock) {
   const tag = listBlock.tag === 'ol' ? 'ol' : 'ul';
   const li = (listBlock.items || []).map((it) => `<li>${SPAN(it)}</li>`).join('');
-  const editor =
-    `<h2><span style="font-family: proxima-nova; font-size: 45px;">${esc(headingText)}</span></h2>\n<${tag}>${li}</${tag}>`;
   return { id: id(), elType: 'widget', widgetType: 'text-editor', elements: [], settings: {
-    editor,
+    editor: `<${tag}>${li}</${tag}>`,
     _padding: { unit: 'px', top: '15', right: '15', bottom: '15', left: '15', isLinked: false },
     _border_border: 'solid',
     _border_width: { unit: 'px', top: '0', right: '0', bottom: '0', left: '4', isLinked: false },
@@ -146,6 +145,7 @@ function ctaSection() {
   const col = { id: id(), elType: 'column', settings: { _column_size: 100, _inline_size: null }, elements: [
     { id: id(), elType: 'widget', widgetType: 'heading', elements: [], settings: {
       title: 'Get a Free Quote from Sun Stoppers Window Tinting Charlotte', align: 'center',
+      header_size: 'h3', // h3 (not h2) so the Table of Contents widget does not list this CTA heading
       title_color: '#FFFFFF', __globals__: { typography_typography: 'globals/typography?id=secondary' } } },
     { id: id(), elType: 'widget', widgetType: 'text-editor', elements: [], settings: {
       editor: '<p><span style="font-weight: 400;">Serving Charlotte, NC and the surrounding areas. <a href="https://charlottewindowtinting.com/contact-us/"><strong>Contact us today</strong></a> for expert service and a free quote.</span></p>',
@@ -191,7 +191,8 @@ for (const f of files) {
     // Merge "Key Takeaways" heading + its following list into one bordered box.
     if (b.tag === 'h2' && /^key takeaways$/i.test((b.text || '').trim()) &&
         next && (next.tag === 'ul' || next.tag === 'ol')) {
-      widgets.push(keyTakeaways(b.text, next));
+      widgets.push(heading(b.text, 'h2'));   // normal H2 (global secondary) — consistent size
+      widgets.push(ktList(next));            // the list, in a left-bordered box
       i++; // skip the list block (consumed)
       continue;
     }
