@@ -185,7 +185,7 @@
       "Manual or motorized preference"
     ]},
     { "tag": "p", "text": "Request your free quote today and get the right shade for every window in your home." },
-    { "tag": "h2", "text": "FAQ" },
+    { "tag": "h2", "text": "FAQs" },
     { "tag": "faq", "items": [
       { "q": "Which is better: solar shades or roller shades?", "a": "It depends on your priority. Solar shades are better for glare reduction, heat control, and preserving outdoor views during the day. Roller shades are better for privacy, room darkening, and rooms where nighttime visibility is a concern. Many homeowners use both depending on the room." },
       { "q": "Do solar shades provide privacy at night?", "a": "No. Solar shades lose privacy after dark when interior lights are on. The visibility effect reverses, and people outside can see in. For rooms where nighttime privacy matters, roller shades or blackout liners are the appropriate choice." },
