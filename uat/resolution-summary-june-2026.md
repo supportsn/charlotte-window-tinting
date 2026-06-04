@@ -2,7 +2,8 @@
 
 **Site:** charlottewindowtinting.com (brand: Sun Stoppers Window Tinting Charlotte)
 **Scope:** 20 Phase-2 blog posts built via SEO Navigator MCP (WordPress + Elementor).
-**QA source:** ClickUp doc "UAT Test - 20 blogs - June. 26" (mirror: `uat/uat-20-blogs-june-2026.md`).
+**QA source:** ClickUp doc ["UAT Test - 20 blogs - June. 26"](https://app.clickup.com/9018614428/docs/8cru8mw-42018/8cru8mw-26678) (mirror: `uat/uat-20-blogs-june-2026.md`).
+**QA task:** [UAT Test for Charlotte Window Tinting - 20 Blog Drafts](https://app.clickup.com/t/86exu79zj) — resolution summary posted as a task comment.
 **Compiled:** 2026-06-05.
 
 > How fixes were applied: all edits were made **in place** via the Elementor MCP
