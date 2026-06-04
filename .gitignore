@@ -11,3 +11,8 @@ npm-debug.log*
 _sheet.*
 _xlsx/
 _docs_html/
+
+# scratch
+_live/
+uat/evidence/
+_docs_html/
