@@ -2,7 +2,10 @@
 
 **Site:** charlottewindowtinting.com (Elementor)
 **Reported:** FAQ accordion question titles (H3) display at the same size as the section H2 ("FAQs").
-**Status:** Verified — confirmed via the Elementor Site Settings (global kit) and the accordion widget settings.
+
+**Status (2026-06-05):**
+- ✅ **Fixed on all 20 blog posts** — each FAQ accordion's Title Typography set to a custom **32px / 600** (the same value the original/older blogs use), which overrides the oversized global `h3` tag. FAQ titles now render 32px, not 55px.
+- ⏳ **Optional, not done (designer's call):** the global `h3` HTML tag is still **55px** site-wide. Stepping it down (Option B) would fix any H3 that lacks a per-widget override and prevent the issue recurring on future content. No site-wide change has been made.
 
 ---
 
