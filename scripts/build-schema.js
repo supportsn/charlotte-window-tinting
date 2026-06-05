@@ -12,6 +12,14 @@ const seoById = Object.fromEntries(seo.posts.map(p => [String(p.post_id), p]));
 const ogById = require(path.join(ROOT, 'articles/og-images.json')); // post_id -> featured image URL
 
 const DATE = '2026-06-05T08:00:00-04:00';
+// articleSection by topic cluster (replaces the old generic "Window Tinting Blog")
+const SECTION = {
+  '7982': 'Window Tinting', '7986': 'Window Tinting', '7999': 'Window Tinting', '8018': 'Window Tinting',
+  '7987': 'Solar Shades & Blinds', '8008': 'Solar Shades & Blinds', '8025': 'Solar Shades & Blinds',
+  '7988': 'Paint Protection Film', '8002': 'Paint Protection Film', '8015': 'Paint Protection Film', '7989': 'Paint Protection Film', '8009': 'Paint Protection Film',
+  '8027': 'Ceramic Coating', '7990': 'Ceramic Coating', '8003': 'Ceramic Coating', '8026': 'Ceramic Coating', '7991': 'Ceramic Coating',
+  '7973': 'Vinyl Wrap', '8001': 'Vinyl Wrap', '8017': 'Vinyl Wrap',
+};
 const ORG = {
   '@type': 'Organization',
   name: 'Sun Stoppers Window Tinting In Charlotte',
@@ -50,7 +58,7 @@ for (const a of idx.articles) {
     inLanguage: 'en-US',
     isAccessibleForFree: true,
     keywords: meta.focus_keyword,
-    articleSection: 'Window Tinting Blog'
+    articleSection: SECTION[String(a.post_id)] || 'Window Tinting Blog'
   };
 
   const graph = [blogPosting];
