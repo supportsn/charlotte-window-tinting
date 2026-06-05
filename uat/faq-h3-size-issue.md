@@ -31,6 +31,27 @@ This is a **site-wide global typography** setting, not a per-blog/per-page style
 
 ---
 
+## What the existing (older) blogs do — reference spec
+
+The **oldest published blog** (`/what-is-ceramic-window-tint/`, post 7543) does **not** rely on the global token for its FAQ. Its accordion **Title Typography is a custom override**, which beats the `h3` tag rule:
+
+| Property | Value (original blogs) |
+|---|---|
+| Title typography | **Custom** (global token cleared) |
+| Font size | **32px** desktop · 26px mobile · 18px tablet |
+| Font weight | **600** |
+| Font family | proxima-nova |
+
+This is the size the FAQ titles are supposed to be.
+
+## ✅ Applied to the 20 new blogs (2026-06-05)
+
+All 20 new blog FAQ accordions were set to the **same custom 32px / 600** title typography (global token cleared) — i.e. **Option A**, matching the original blogs. Their FAQ H3 now renders at 32px instead of 55px. No site-wide/global change was made.
+
+**Remaining (optional, designer's call):** the global `h3` HTML tag is still 55px (Option B below). Worth stepping it down site-wide so any *future* H3 — or any H3 that doesn't have a per-widget override — is correctly sized without needing the per-widget workaround.
+
+---
+
 ## Recommended fixes (pick one)
 
 ### Option A — Per-widget override (blog only, no site-wide impact) ✅ recommended
