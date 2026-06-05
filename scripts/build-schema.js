@@ -1,15 +1,17 @@
 // Build per-post JSON-LD @graph (BlogPosting + FAQPage) as an HTML <script> string,
-// mirroring the 7982 schema. Sources: articles/source/<slug>.json (H1 + faq) and
-// articles/seo-meta.json (focus_keyword + description). datePublished/dateModified = DATE.
-// Image field intentionally omitted (no featured images yet — avoid 404 URLs).
+// mirroring the 7982 schema. Sources: articles/source/<slug>.json (H1 + faq),
+// articles/seo-meta.json (focus_keyword + description), articles/og-images.json (image URL).
+// datePublished/dateModified = DATE (full ISO-8601 datetime WITH timezone so Google Rich
+// Results does not warn about "invalid datetime"/"missing timezone").
 const fs = require('path') && require('fs');
 const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const idx = require(path.join(ROOT, 'articles/_index.json'));
 const seo = require(path.join(ROOT, 'articles/seo-meta.json'));
 const seoById = Object.fromEntries(seo.posts.map(p => [String(p.post_id), p]));
+const ogById = require(path.join(ROOT, 'articles/og-images.json')); // post_id -> featured image URL
 
-const DATE = '2026-06-05';
+const DATE = '2026-06-05T08:00:00-04:00';
 const ORG = {
   '@type': 'Organization',
   name: 'Sun Stoppers Window Tinting In Charlotte',
@@ -28,9 +30,7 @@ fs.mkdirSync(OUTDIR, { recursive: true });
 
 let done = 0;
 for (const a of idx.articles) {
-  // 7982 is also emitted for a complete 20-file manifest. NOTE: the LIVE 7982 schema
-  // (injected manually as widget df0697f) additionally carries an "image" field; this
-  // regenerated copy omits image like the rest (no featured images yet).
+  // 7982 is also emitted for a complete 20-file manifest (same shape as the rest).
   const src = JSON.parse(fs.readFileSync(path.join(ROOT, a.source), 'utf8'));
   const meta = seoById[String(a.post_id)];
   if (!meta) { console.log('NO SEO META', a.post_id); continue; }
@@ -42,6 +42,7 @@ for (const a of idx.articles) {
     mainEntityOfPage: { '@type': 'WebPage', '@id': a.target_url },
     headline: h1,
     description: meta.description,
+    image: ogById[String(a.post_id)] || undefined,
     datePublished: DATE,
     dateModified: DATE,
     author: ORG,
